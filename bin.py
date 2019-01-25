@@ -15,7 +15,7 @@ def code(msg) :#passe du texte au binaire
         txt=txt+' '+c
     return txt
 
-print("Convertisseur binaire \nBy ton ninchat.\n")
+print("Binary converter \nBy shutdown_01011\n")
 choix=""
 while choix != 'exit' and (choix == "" or choix == '1' or choix == '2'):
     print("\nTexte vers Binaire -> 1\nBinaire vers Texte -> 2\nexit -> sorir")
