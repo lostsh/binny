@@ -12,7 +12,7 @@ def code(msg) :#input the text and output the binary text
     txt=""
     for char in msg :
         c=bin(ord(char))
-        txt=txt+' '+c
+        txt+=' '+c
     return txt
 
 print("Binary converter \nBy shutdown_01011\n")
