@@ -1,4 +1,4 @@
-def decode(msg) :#passer du binaire au texte
+def decode(msg) :#function get a binary number and output a  text or letter
     tabl = msg.split()
     i=0
     txt=""
@@ -8,7 +8,7 @@ def decode(msg) :#passer du binaire au texte
         i+=1
     return txt
 
-def code(msg) :#passe du texte au binaire
+def code(msg) :#input the text and output the binary text
     txt=""
     for char in msg :
         c=bin(ord(char))
@@ -18,7 +18,7 @@ def code(msg) :#passe du texte au binaire
 print("Binary converter \nBy shutdown_01011\n")
 choix=""
 while choix != 'exit' and (choix == "" or choix == '1' or choix == '2'):
-    print("\nTexte vers Binaire -> 1\nBinaire vers Texte -> 2\nexit -> sorir")
+    print("\nText to Binary -> 1\nBinary to Text -> 2\nexit ->to exit")#if you exit ... this must creat a unicorn
     choix = input("\:>")
     if choix == '1' :
         print("\n",code(input("Texte :\n/>")))
