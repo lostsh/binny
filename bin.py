@@ -1,28 +1,31 @@
-def decode(msg) :#function get a binary number and output a  text or letter
-    tabl = msg.split()
-    i=0
-    txt=""
-    while i < len(tabl) :
-        c=chr(int(tabl[i], 2))
-        txt+=c
-        i+=1
-    return txt
+#get a bin String, and return text String
+def decode(msg):
+    text=""
+    for letter in msg.split():
+        text+=chr(int(letter, 2))
+    return text
 
-def code(msg) :#input the text and output the binary text
+#get a String text and return a String bin
+def code(msg) :
     txt=""
     for char in msg :
         c=bin(ord(char))
         txt+=' '+c
     return txt
+#prompt something and return the inputed text
+def prompt(msg):
+    return input("%s\>"%(msg))
 
-print("Binary converter \nBy shutdown_01011\n")
 choix=""
 while choix != 'exit' and (choix == "" or choix == '1' or choix == '2'):
-    print("\nText to Binary -> 1\nBinary to Text -> 2\nexit ->to exit")#if you exit ... this must creat a unicorn
-    choix = input("\:>")
-    if choix == '1' :
-        print("\n",code(input("Texte :\n/>")))
-    elif choix == '2' :
-        print("\n",decode(input("Binaire :\n/>")))
-    else :
-        print("[*]Exiting\n")
+    print("\nText to Binary -> 1\nBinary to Text -> 2\nexit ->to exit")
+    choix = prompt("")
+    try:
+        if choix == '1' :
+            print("\n",code(prompt("Text ")))
+        elif choix == '2' :
+            print("\n",decode(prompt("Binary ")))
+        else :
+            print("[*]Exiting\n")
+    except ValueError :
+        print("[!] Incorect input")
